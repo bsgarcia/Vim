@@ -1,11 +1,15 @@
 
-"""""""""""""""""""   VIM GENERAL CONFIG """"""""""""""""""""""""""""""""
+
+"----------[ VIM GENERAL CONFIG ]---------"
+
 ""change some commands
-""noremap i a
-noremap a b 
-map a b 
 nnoremap a b
 noremap e w
+nnoremap cc dd
+nnoremap dd "_dd 
+
+"improve searching function 
+set incsearch
 
 "disable preview window
 set completeopt=menu,menuone
@@ -15,22 +19,20 @@ set completeopt-=preview
 "let g:ycm_autoclose_preview_window_after_completion=1
 
 " CDC = Change to Directory of Current file
-command CD cd %:p:h
+command CDC cd %:p:h
 
-for i in range(97,122)
-  let c = nr2char(i)
-  exec "map \e".c." <M-".c.">"
-  exec "map! \e".c." <M-".c.">"
-endfor
-
-" cycle through vim using alt+numbers
 " Go to tab by number
 noremap ¦ 1gt
 noremap é 2gt
 noremap ¢ 3gt
 noremap § 4gt
+
+" cycle through vim using alt+arrows
 noremap <M-Right> :tabn<CR>
 noremap <M-Left>  :tabp<CR>
+
+" create new tab current folder 
+noremap <C-t> :CDC<CR> :tabe ./ <CR>
 
 "exec pathogen plugin manager
 execute pathogen#infect()
@@ -48,19 +50,17 @@ let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
 let g:jedi#show_call_signatures_delay = 0"
 
-
 "disable ycm
 "let g:loaded_youcompleteme = 1
-
 
 "Toggle lines by default
 let g:indentLine_enabled = 0
 
 ""disable start up msg
 set shortmess+=A
+
 ""enable mouse
 set mouse=a
-
 
 ""set nowrap
 set nowrap
@@ -85,6 +85,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = []
 
 
 ""set colorscheme
@@ -113,7 +114,8 @@ set t_Co=256
 
 
 "set copy paste
-noremap <C-v> "+gP
+inoremap <C-v> "+gP
+"noremap <C-v> "+gP
 noremap <C-c> "+y
 
 "remove bell
