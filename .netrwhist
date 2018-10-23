@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/getz/.config/awesome/themes/powerarrow-dark'
+let g:netrw_dirhist_2='/home/getz/python/Hotelling'
+let g:netrw_dirhist_3='/home/getz/python/Hotelling/environment'
+let g:netrw_dirhist_4='/home/getz/python/Hotelling'
+let g:netrw_dirhist_5='/home/getz/python/Hotelling/cluster'
+let g:netrw_dirhist_6='/home/getz/Pycharm/DuopolyDjango'

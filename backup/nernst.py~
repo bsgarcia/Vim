@@ -1,0 +1,28 @@
+import numpy as np
+
+
+def nernst(R, T, z, F, C_ext, C_int):
+
+    return ((R * T) / (z * F)) * np.log(C_ext / C_int)
+    
+
+def main():
+
+    R = 8.315  # la constante des gaz parfaits 
+    T = 310  # la température en kelvin 
+    z = -1  # z la charge de l'ion perméant (avec le signe) 
+    F = 96845  # La constante de Faraday
+    C_ext = 30  # Concentration extérieure
+    C_int = 3
+    
+    result = nernst(R=R,
+                    T=T,
+                    z=z,
+                    F=F,
+                    C_ext=C_ext,
+                    C_int=C_int)
+
+    print(result)
+
+if __name__ == '__main__':
+    main()
